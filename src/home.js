@@ -1,8 +1,9 @@
 import { addDoc, collection, Timestamp } from "firebase/firestore";
-import React, { useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
 import { db } from "./lib/firebase";
 import OffersCarousel from "./OffersCarousel";
+
 
 import {
   ChevronLeft,
@@ -15,7 +16,7 @@ import {
   Phone,
   Twitter,
 } from "lucide-react";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
 import toast from "react-hot-toast";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -475,16 +476,16 @@ const features = [
 function FeaturesSection() {
   const prevRef = useRef(null);
   const nextRef = useRef(null);
-
+  const [swiperInstance, setSwiperInstance] = useState(null);
   useEffect(() => {
-    const swiperInstance = document.querySelector(".swiper").swiper;
     if (swiperInstance) {
       swiperInstance.params.navigation.prevEl = prevRef.current;
       swiperInstance.params.navigation.nextEl = nextRef.current;
       swiperInstance.navigation.init();
       swiperInstance.navigation.update();
     }
-  }, []);
+  }, [swiperInstance]);
+
 
   return (
     <div className="py-10 px-5 md:px-20 bg-gray-100">
@@ -516,6 +517,7 @@ function FeaturesSection() {
             768: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
           }}
+          onSwiper={setSwiperInstance} // Store swiper instance
           navigation={{ prevEl: prevRef.current, nextEl: nextRef.current }}
         >
           {features.map((feature, index) => (

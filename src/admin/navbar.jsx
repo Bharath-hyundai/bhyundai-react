@@ -20,7 +20,7 @@ function Navbar({ handleActive }) {
   const handleLogout = async () => {
     await signOut(auth)
       .then((res) => {
-        navigate("/");
+        navigate("/login");
         dispatch({ type: "LOGOUT" });
         localStorage.setItem("user", "");
       })

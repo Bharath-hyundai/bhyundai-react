@@ -1,6 +1,8 @@
+
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useEffect, useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -49,13 +51,28 @@ const carOffers = [
 ];
 
 function OffersCarousel() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  useEffect(() => {
+    if (swiperInstance) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+    }
+  }, [swiperInstance]);
+
   return (
     <div className="bg-[#392e2e] text-white py-8">
       <h2 className="text-center text-3xl font-bold mb-6">Our Exclusive Offers</h2>
 
       <div className="max-w-7xl mx-auto px-6 relative">
         {/* Previous Button */}
-        <button className="custom-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full cursor-pointer hover:bg-gray-700">
+        <button
+          ref={prevRef}
+          className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full cursor-pointer hover:bg-gray-700"
+        >
           ❮
         </button>
 
@@ -63,9 +80,10 @@ function OffersCarousel() {
           modules={[Navigation]}
           spaceBetween={20}
           slidesPerView={1}
+          onSwiper={setSwiperInstance} // Store swiper instance
           navigation={{
-            prevEl: ".custom-prev",
-            nextEl: ".custom-next",
+            prevEl: prevRef.current,
+            nextEl: nextRef.current,
           }}
           breakpoints={{
             640: { slidesPerView: 2 },
@@ -86,7 +104,6 @@ function OffersCarousel() {
                   width={350}
                   height={250}
                   className="w-full rounded-lg"
-                  priority
                 />
                 <h3 className="text-blue-900 text-xl font-semibold mt-4">{car.name}</h3>
                 <p className="text-red-600 text-lg font-bold">
@@ -98,7 +115,10 @@ function OffersCarousel() {
         </Swiper>
 
         {/* Next Button */}
-        <button className="custom-next absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full cursor-pointer hover:bg-gray-700">
+        <button
+          ref={nextRef}
+          className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-800 text-white p-3 rounded-full cursor-pointer hover:bg-gray-700"
+        >
           ❯
         </button>
       </div>
@@ -108,7 +128,4 @@ function OffersCarousel() {
   );
 }
 
-export default OffersCarousel
-
-
-
+export default OffersCarousel;
