@@ -91,9 +91,9 @@ const InterestForm = () => {
         </Link>
         <a
           className="text-lg font-semibold text-gray-900"
-          href="tel:+917733888999"
+          href="tel:+919610256240"
         >
-          📞 7733888999
+          📞 9610256240
         </a>
       </nav>
 
