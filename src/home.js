@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { db } from "./lib/firebase";
 import OffersCarousel from "./OffersCarousel";
 
-
+import { ToastContainer} from 'react-toastify';
 import {
   ChevronLeft,
   ChevronRight,
@@ -68,7 +68,7 @@ const InterestForm = () => {
           model: form.model,
           timestamp: Timestamp.now(),
         });
-
+        toast.success('successfully submited')
         navigate("/thank-you");
       } catch (error) {
         console.log(error);
@@ -81,6 +81,19 @@ const InterestForm = () => {
 
   return (
     <>
+      <ToastContainer
+    position="top-center"
+    autoClose={5000}
+    hideProgressBar={false}
+    newestOnTop={false}
+    closeOnClick={false}
+    rtl={false}
+    pauseOnFocusLoss
+    draggable
+    pauseOnHover
+    theme="dark"
+    //transition={Bounce}
+    />
       <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full px-6 py-3 shadow-md md:px-12 lg:px-16 bg-white/30 backdrop-blur-lg">
         <Link to={"/"}>
           <img
@@ -99,7 +112,7 @@ const InterestForm = () => {
 
       <div className="relative hidden w-full min-h-screen mt-14 md:mt-10 md:block">
         <img
-          src="/images/landing-page-banner.webp"
+          src="/images/Bharat-Hyundai-May-Banner.webp"
           alt="Banner"
           className="absolute inset-0 object-cover w-full h-full mt-9"
         />
@@ -107,7 +120,7 @@ const InterestForm = () => {
 
       <div className="relative w-full min-h-[50vh] mt-14 md:mt-10 md:hidden">
         <img
-          src="/images/mobile-banner2.webp"
+          src="/images/mobile-banner.webp"
           alt="Mobile Banner"
           className="object-cover w-full h-full"
         />

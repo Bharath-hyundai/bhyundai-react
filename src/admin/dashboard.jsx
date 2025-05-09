@@ -64,6 +64,7 @@ function Dashboard() {
         setData(list);
         setFilteredData(list);
         setLoading(false);
+        
       } catch (error) {
         console.log(error);
         toast.error("Something went wrong!");
