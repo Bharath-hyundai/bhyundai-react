@@ -109,25 +109,24 @@ const InterestForm = () => {
           📞 9610256240
         </a>
       </nav>
-
-      <div className="relative hidden w-full min-h-screen mt-14 md:mt-10 md:block">
+  ``  
         <img
           src="/images/Bharat-Hyundai-May-Banner.webp"
           alt="Banner"
-          className="absolute inset-0 object-cover w-full h-full mt-9"
+          className="hidden w-full mt-14 sm:block"
         />
-      </div>
+     
 
-      <div className="relative w-full min-h-[50vh] mt-14 md:mt-10 md:hidden">
+      
         <img
           src="/images/mobile-banner.webp"
           alt="Mobile Banner"
-          className="object-cover w-full h-full"
+          className="w-full sm:hidden"
         />
-      </div>
+     
 
-      <div className="w-full bg-white flex justify-center border md:top-2/3 lg:absolute lg:top-1/2 lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-lg">
-        <div className="w-full max-w-md p-6 bg-white shadow-lg sm:p-8 md:p-10 rounded-2xl lg:max-w-lg">
+      <div className="w-full bg-white flex justify-center border md:top-72 lg:absolute  lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-sm lg:max-h-sm">
+        <div className="w-full max-w-md p-3 bg-white shadow-lg sm:p-8 md:p-2 rounded-2xl lg:max-w-sm lg:max-h-sm">
           <h3 className="pb-4 text-xl font-bold text-center text-black sm:text-2xl">
             REGISTER YOUR INTEREST
           </h3>
