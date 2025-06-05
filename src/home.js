@@ -104,31 +104,32 @@ const InterestForm = () => {
         </Link>
         <a
           className="text-lg font-semibold text-gray-900"
-          href="tel:+919610256240"
+          href="tel:+917733888999"
         >
-          📞 9610256240
+          📞 7733888999
         </a>
       </nav>
   ``  
-        <img
-          src="/images/Bharat-Hyundai-May-Banner.webp"
-          alt="Banner"
-          className="hidden w-full mt-14 sm:block"
-        />
+{/* Desktop Banner */}
+<img
+  src="/images/Website_Hyundai_Monsoon_Offers__at_Bharat_Hyundai.webp"
+  alt="Banner"
+  className="hidden object-cover w-full mt-12 sm:block"
+/>
+
+{/* Mobile Banner */}
+<img
+  src="/images/WM_Hyundai_Monsoon_Offers__at_Bharat_Hyundai.webp"
+  alt="Mobile Banner"
+  className="block object-cover w-full sm:hidden"
+/>
+
      
 
-      
-        <img
-          src="/images/mobile-banner.webp"
-          alt="Mobile Banner"
-          className="w-full sm:hidden"
-        />
-     
-
-      <div className="w-full bg-white flex justify-center border md:top-72 lg:absolute  lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-sm lg:max-h-sm">
-        <div className="w-full max-w-md p-3 bg-white shadow-lg sm:p-8 md:p-2 rounded-2xl lg:max-w-sm lg:max-h-sm">
+      <div className="w-full bg-white flex justify-center   2xl:top-96 border xl:top-80 lg:absolute  lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%]    lg:max-w-sm lg:max-h-sm">
+        <div className="w-full max-w-sm p-3 bg-white shadow-lg sm:p-8 md:p-2 rounded-2xl lg:max-w-sm lg:max-h-sm ">
           <h3 className="pb-4 text-xl font-bold text-center text-black sm:text-2xl">
-            REGISTER YOUR INTEREST
+           REGISTER YOUR INTEREST
           </h3>
           {!submitted && (
             <form onSubmit={handleSubmit} className="space-y-6">
