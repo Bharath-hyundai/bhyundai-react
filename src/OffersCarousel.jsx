@@ -30,7 +30,7 @@ const carOffers = [
   // },
   {
     name: "Hyundai I20",
-    price: "₹70,000*",
+    price: "₹55,000*",
     image: "/images/i20.png",
   },
   // {
@@ -46,7 +46,7 @@ const carOffers = [
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "₹80,000*",
+    price: "₹65,000*",
     image: "/images/Grand _10_Nios.png",
   },
   {
@@ -57,7 +57,7 @@ const carOffers = [
 
   {
     name: "Hyundai EXTER",
-    price: "₹60,000*",
+    price: "₹55,000*",
     image: "/images/EXTER.png",
   },
   {
@@ -69,7 +69,7 @@ const carOffers = [
     {
     name: "Hyundai Creta",
     price: "₹5,000*",
-    image: "/images/Hyundai_Tucson.png",
+    image: "/images/creta-suvpc.png",
   },
  
 ];

@@ -22,6 +22,11 @@ import CretaNLine from "./vehicles/creta-n-line";
 import Ioniq5 from "./Electric-vechicles/Ioniq5";
 import CretaEV from "./Electric-vechicles/CretaEV";
 import PrivacyPolicy from "./components/screens/PrivacyPolicy";
+import TermsConditions from "./components/TermsConditions";
+import OutletsPage from "./components/screens/OutletsPage";
+import Gallery from "./components/screens/Gallery";
+import VenueNLine from "./vehicles/VenueNLine";
+import Accessories from "./components/Accessories";
 
 
 const App = () => {
@@ -61,10 +66,15 @@ const App = () => {
                  <Route path ='/vehicles/creta-n-line' element = {<CretaNLine/>}/>
                  <Route path ='/vehicles/ioniq-5' element = {<Ioniq5/>}/>
                  <Route path ='/vehicles/creta-ev' element = {<CretaEV/>}/>
+                    <Route path ='/vehicles/venue-n-line' element = {<VenueNLine/>}/>
                
 
 <Route path="/contact-us" element = {<ContactUs/>}/>
 <Route path="/PrivacyPolicy" element = {<PrivacyPolicy/>}/>
+<Route path="/terms-conditions" element = {<TermsConditions/>}/>
+<Route path="/outlets" element = {<OutletsPage/>}/>
+<Route path="/gallery" element = {<Gallery/>}/>
+<Route path="/accessories" element = {<Accessories/>}/>
         {/* ===========Admin authentication=========== */}
         <Route path="/login" element={<Login />} />
 

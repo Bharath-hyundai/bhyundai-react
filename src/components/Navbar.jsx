@@ -190,8 +190,7 @@ const Navbar = () => {
           {/* -------- VEHICLES -------- */}
           <div
             className="relative"
-            onMouseEnter={onHover(setOpenVehicles)}
-             onMouseLeave={onLeave(setOpenVehicles)}
+           
           >
             <button
               className="hover:text-red-500"
@@ -209,8 +208,7 @@ const Navbar = () => {
           {/* SERVICES */}
           <div
             className="relative"
-            onMouseEnter={onHover(setOpenServices)}
-            onMouseLeave={onLeave(setOpenServices)}
+           
           >
             <button
               className="hover:text-red-500"
@@ -222,6 +220,8 @@ const Navbar = () => {
               <div className="absolute z-50 w-48 mt-2 bg-white rounded-lg shadow-xl">
                 {[
                   ["Maintenance", "/services/maintenance"],
+                  ["Gallery", "/gallery"],
+                  ["Blogs", "/blogs"],
                   ["Body Shop", "/services/body-shop"],
                   ["Insurance", "/services/insurance"],
                 ].map(([label, link]) => (
@@ -255,6 +255,7 @@ const Navbar = () => {
                   ["CNG Vehicles", "/vehicles/cng"],
                   ["Body Shop", "/services/body-shop"],
                   ["Insurance", "/services/insurance"],
+                    ["Accessories", "/services/accessories"],
                 ].map(([label, link]) => (
                   <Link
                     key={label}

@@ -23,7 +23,7 @@ import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { CgSpinner } from 'react-icons/cg';
-import Navbar from './components/Navbar';
+// import Navbar from './components/Navbar';
 
 // import Popup from "./popup";
 
@@ -114,14 +114,14 @@ const InterestForm = () => {
 
       {/* Desktop Banner */}
       <img
-        src='/images/Website_Hyundai_Monsoon_Offers__at_Bharat_Hyundai.webp'
+        src='/images/Website_Hyundai_Monsoon_Offers__at_Bharat_Hyundai (1).webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
 
       {/* Mobile Banner */}
       <img
-        src='/images/WM_Hyundai_Monsoon_Offers__at_Bharat_Hyundai.webp'
+        src='/images/WM_Hyundai_Monsoon_Offers__at_Bharat_Hyundai (1).webp'
         alt='Mobile Banner'
         className='block object-cover w-full sm:hidden'
       />
@@ -131,6 +131,7 @@ const InterestForm = () => {
           <h3 className='pb-4 text-xl font-bold text-center text-black sm:text-2xl'>
             REGISTER YOUR INTEREST
           </h3>
+          
           {!submitted && (
             <form onSubmit={handleSubmit} className='space-y-6'>
               <input
@@ -359,10 +360,10 @@ export const Footer = () => {
           <ul className='space-y-2'>
             {[
               { label: 'Privacy Policy', href: '/PrivacyPolicy' },
-              { label: 'Gallery', href: '/gallery' },
-              { label: 'Testimonials', href: '/testimonials' },
-              { label: 'Contact Us', href: '/contact-us' },
-              { label: 'Career', href: '/career' },
+              { label: 'Gallery', href: '/' },
+              { label: 'Testimonials', href: '/' },
+              { label: 'Contact Us', href: '/' },
+              { label: 'Career', href: '/' },
             ].map((item, index) => (
               <li key={index} className='pb-1 border-b hover:text-teal-400'>
                 <a href={item.href}>{item.label}</a>
@@ -385,7 +386,7 @@ export const Footer = () => {
             >
               <Facebook className='w-6 h-6 cursor-pointer hover:text-gray-400' />
             </a>
-            <a href='#' aria-label='Twitter'>
+            <a href='/' aria-label='Twitter'>
               <Twitter className='w-6 h-6 cursor-pointer hover:text-gray-400' />
             </a>
             <a
