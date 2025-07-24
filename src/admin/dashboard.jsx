@@ -7,6 +7,7 @@ import { db } from "../lib/firebase";
 import DataTable from "react-data-table-component";
 import toast from "react-hot-toast";
 import * as XLSX from "xlsx";
+import { useParams } from "react-router-dom";
 
 const customStyles = {
   rows: { style: { minHeight: "55px" } },
@@ -38,6 +39,9 @@ const Export = ({ onExport }) => (
 );
 
 function Dashboard() {
+  const { city } = useParams(); // Get 'hyderabad' or 'khammam' from URL
+  const selectedCity = city?.toUpperCase() || "ALL";
+
   const [active, setActive] = useState(true);
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
@@ -64,7 +68,6 @@ function Dashboard() {
         setData(list);
         setFilteredData(list);
         setLoading(false);
-        
       } catch (error) {
         console.log(error);
         toast.error("Something went wrong!");
@@ -80,14 +83,19 @@ function Dashboard() {
       Email: row.email,
       Phone: row.mobile,
       Model: row.model,
+      City: row.city ?? "N/A",
       Timestamp: formatTimestamp(row.timestamp),
     }));
     const worksheet = XLSX.utils.json_to_sheet(formatted);
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Leads");
-    const excelBuffer = XLSX.write(workbook, { bookType: "xlsx", type: "array" });
+    const excelBuffer = XLSX.write(workbook, {
+      bookType: "xlsx",
+      type: "array",
+    });
     const blob = new Blob([excelBuffer], {
-      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      type:
+        "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     });
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -112,6 +120,7 @@ function Dashboard() {
     { name: "Email", selector: (row) => row.email },
     { name: "Phone", selector: (row) => row.mobile },
     { name: "Model", selector: (row) => row.model },
+    { name: "City", selector: (row) => row.city ?? "N/A" },
     {
       name: "Timestamp",
       selector: (row) => formatTimestamp(row.timestamp),
@@ -133,16 +142,22 @@ function Dashboard() {
       const from = fromDate ? new Date(fromDate) : null;
       const to = toDate ? new Date(toDate) : null;
 
-      return (
-        (!from || itemDate >= from) &&
-        (!to || itemDate <= to) &&
-        (item.name?.toLowerCase().includes(search.toLowerCase()) ||
-          item.email?.toLowerCase().includes(search.toLowerCase()) ||
-          item.mobile?.toLowerCase().includes(search.toLowerCase()))
-      );
+      const matchSearch =
+        item.name?.toLowerCase().includes(search.toLowerCase()) ||
+        item.email?.toLowerCase().includes(search.toLowerCase()) ||
+        item.mobile?.toLowerCase().includes(search.toLowerCase());
+
+      const matchDate =
+        (!from || itemDate >= from) && (!to || itemDate <= to);
+
+      const matchCity =
+        selectedCity === "ALL" || item.city?.toUpperCase() === selectedCity;
+
+      return matchSearch && matchDate && matchCity;
     });
+
     setFilteredData(result);
-  }, [search, fromDate, toDate, data]);
+  }, [search, fromDate, toDate, selectedCity, data]);
 
   return (
     <div className="flex flex-row h-screen">
@@ -160,7 +175,7 @@ function Dashboard() {
             </div>
           ) : (
             <DataTable
-              title="All Leads"
+              title={`Leads - ${selectedCity}`}
               columns={columns}
               data={filteredData}
               pagination

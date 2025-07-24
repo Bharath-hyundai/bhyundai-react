@@ -33,6 +33,7 @@ const InterestForm = () => {
     mobile: '',
     email: '',
     model: '',
+    city: '', // ✅ Added city to form state
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -52,6 +53,7 @@ const InterestForm = () => {
     if (!form.name.trim()) newErrors.name = 'Name is required';
     if (!form.mobile.trim() || !/^\d{10}$/.test(form.mobile))
       newErrors.mobile = 'Valid 10-digit mobile number is required';
+    if (!form.city) newErrors.city = 'Please select a city'; // ✅ city validation
     if (!form.model) newErrors.model = 'Please select a car model';
     if (form.email && !/\S+@\S+\.\S+/.test(form.email))
       newErrors.email = 'Please enter a valid email address';
@@ -61,15 +63,15 @@ const InterestForm = () => {
     if (Object.keys(newErrors).length === 0) {
       setLoading(true);
       try {
-        // Add a new document in collection "leads(table name)"
         await addDoc(collection(db, 'leads'), {
           name: form.name,
           email: form.email,
           mobile: form.mobile,
           model: form.model,
+          city: form.city,
           timestamp: Timestamp.now(),
         });
-        toast.success('successfully submited');
+        toast.success('Successfully submitted');
         navigate('/thank-you');
       } catch (error) {
         console.log(error);
@@ -82,56 +84,43 @@ const InterestForm = () => {
 
   return (
     <>
-      <ToastContainer
-        position='top-center'
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick={false}
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme='dark'
-        //transition={Bounce}
-      />
-      {/* <Navbar /> */}
-      <nav className="fixed top-0 left-0 z-50 flex items-center justify-between w-full px-6 py-3 shadow-md md:px-12 lg:px-16 bg-white/30 backdrop-blur-lg">
-        <Link to={"/"}>
+      <ToastContainer position='top-center' autoClose={5000} theme='dark' />
+      <nav className='fixed top-0 left-0 z-50 flex items-center justify-between w-full px-6 py-3 shadow-md md:px-12 lg:px-16 bg-white/30 backdrop-blur-lg'>
+        <Link to={'/'}>
           <img
-            src={require("./images/logo.png")}
-            className="h-12"
-            alt="Hyundai Logo"
+            src={require('./images/logo.png')}
+            className='h-12'
+            alt='Hyundai Logo'
           />
         </Link>
-        <a
-          className="text-lg font-semibold text-gray-900"
-          href="tel:+917733888999"
-        >
-          📞 7733888999
-        </a>
+        <h1 className='text-xl font-semibold '>
+          Booking for
+          <a
+            className='pl-4 text-lg font-semibold text-gray-900'
+            href='tel:+917733888999'
+          >
+            📞 7733888999
+          </a>
+        </h1>
       </nav>
 
-      {/* Desktop Banner */}
       <img
         src='/images/Website_Hyundai_Monsoon_Offers__at_Bharat_Hyundai (1).webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
-
-      {/* Mobile Banner */}
       <img
         src='/images/WM_Hyundai_Monsoon_Offers__at_Bharat_Hyundai (1).webp'
         alt='Mobile Banner'
         className='block object-cover w-full sm:hidden'
       />
 
-      <div className='w-full bg-white flex justify-center   2xl:top-96 border xl:top-80 lg:absolute  lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%]    lg:max-w-sm lg:max-h-sm'>
+      <div className='w-full bg-white flex justify-center 2xl:top-96 border xl:top-80 lg:absolute lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-sm lg:max-h-sm'>
         <div className='w-full max-w-sm p-3 bg-white shadow-lg sm:p-8 md:p-2 rounded-2xl lg:max-w-sm lg:max-h-sm '>
           <h3 className='pb-4 text-xl font-bold text-center text-black sm:text-2xl'>
             REGISTER YOUR INTEREST
           </h3>
-          
+
           {!submitted && (
             <form onSubmit={handleSubmit} className='space-y-6'>
               <input
@@ -146,6 +135,7 @@ const InterestForm = () => {
               {errors.name && (
                 <p className='text-xs text-red-500'>{errors.name}</p>
               )}
+
               <input
                 type='text'
                 name='mobile'
@@ -158,15 +148,24 @@ const InterestForm = () => {
               {errors.mobile && (
                 <p className='text-xs text-red-500'>{errors.mobile}</p>
               )}
-              <input
-                type='email'
-                name='email'
-                placeholder='Email (optional)'
-                value={form.email}
+
+              <select
+                name='city'
+                value={form.city}
                 disabled={loading}
                 onChange={handleChange}
                 className='w-full px-4 py-2 text-sm text-center text-black bg-transparent border-b-2 border-black sm:text-base focus:outline-none'
-              />
+              >
+                <option value='' disabled hidden>
+                  Select City
+                </option>
+                <option value='HYDERABAD'>Hyderabad</option>
+                <option value='KHAMMAM'>Khammam</option>
+              </select>
+              {errors.city && (
+                <p className='text-xs text-red-500'>{errors.city}</p>
+              )}
+
               <select
                 name='model'
                 value={form.model}
@@ -191,6 +190,7 @@ const InterestForm = () => {
               {errors.model && (
                 <p className='text-xs text-red-500'>{errors.model}</p>
               )}
+
               <button
                 type='submit'
                 disabled={loading}
@@ -207,12 +207,13 @@ const InterestForm = () => {
               </button>
             </form>
           )}
+
           <p className='mt-3 text-xs text-center text-gray-600'>
             *By clicking 'Submit', you agree to our Terms & Conditions.
           </p>
         </div>
       </div>
-      {/* <Popup/> */}
+
       <OffersCarousel />
       <CarShowcase />
       <FeaturesSection />
@@ -277,7 +278,7 @@ function CarShowcase() {
             <button className='px-6 py-2 text-blue-500 transition border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white'>
               Brochure
             </button>
-            <a href='#' className='flex items-center text-lg text-blue-500'>
+            <a href='/' className='flex items-center text-lg text-blue-500'>
               Register your Interest <span className='ml-2'>→</span>
             </a>
           </div>
@@ -355,7 +356,7 @@ export const Footer = () => {
         </div>
 
         {/* About Section */}
-       <div>
+        <div>
           <h3 className='mb-3 text-lg font-semibold'>About Us</h3>
           <ul className='space-y-2'>
             {[
@@ -371,8 +372,6 @@ export const Footer = () => {
             ))}
           </ul>
         </div>
-
-    
 
         {/* Social & Contact */}
         <div className='space-y-8'>
@@ -437,7 +436,7 @@ export const Footer = () => {
           © 2025 All Rights Reserved by Bharat Hyundai Motors.
         </p>
         <p className='mt-1 text-gray-500'>
-          Powered by{' '}
+          Powered by
           <a
             href='https://broaddcast.com/'
             target='_blank'
