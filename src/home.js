@@ -33,7 +33,7 @@ const InterestForm = () => {
     mobile: '',
     email: '',
     model: '',
-    city: '', // ✅ Added city to form state
+    city: '', 
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -53,7 +53,7 @@ const InterestForm = () => {
     if (!form.name.trim()) newErrors.name = 'Name is required';
     if (!form.mobile.trim() || !/^\d{10}$/.test(form.mobile))
       newErrors.mobile = 'Valid 10-digit mobile number is required';
-    if (!form.city) newErrors.city = 'Please select a city'; // ✅ city validation
+    if (!form.city) newErrors.city = 'Please select a city'; 
     if (!form.model) newErrors.model = 'Please select a car model';
     if (form.email && !/\S+@\S+\.\S+/.test(form.email))
       newErrors.email = 'Please enter a valid email address';
@@ -97,9 +97,9 @@ const InterestForm = () => {
           Booking for
           <a
             className='pl-4 text-lg font-semibold text-gray-900'
-            href='tel:+917733888999'
+            href='tel:+917665889564'
           >
-            📞 7733888999
+            📞 7665889564
           </a>
         </h1>
       </nav>
@@ -173,7 +173,7 @@ const InterestForm = () => {
                 disabled={loading}
                 className='w-full px-4 py-2 text-sm text-center text-black bg-transparent border-b-2 border-black sm:text-base focus:outline-none'
               >
-                <option value=''>Select Model</option>
+                <option  value=''>Select Model</option>
                 <option value='I20'>I20</option>
                 <option value='GRAND I10 NIOS'>GRAND I10 NIOS</option>
                 <option value='AURA'>AURA</option>
@@ -407,7 +407,7 @@ export const Footer = () => {
           </div>
           <p className='flex items-center gap-2'>
             <Phone className='w-5 h-5' />
-            <a href='tel:+917733888999'>7733888999</a>
+            <a href='tel:+917665889564'>7665889564</a>
           </p>
           <p className='flex items-center gap-2 mt-2'>
             <Mail className='w-5 h-5' />
@@ -442,7 +442,7 @@ export const Footer = () => {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <span className='hover:text-red-500'>
+            <span className='ml-4 hover:text-red-500'>
               BroaddCast Business Solutions LLP.
             </span>
           </a>

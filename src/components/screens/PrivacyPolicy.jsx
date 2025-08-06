@@ -17,9 +17,9 @@ export default function PrivacyPolicy() {
         </Link>
         <a
           className="text-lg font-semibold text-gray-900"
-          href="tel:+917733888999"
+          href="tel:+917665889564"
         >
-          📞 7733888999
+          📞 7665889564
         </a>
       </nav>
     <div className="max-w-4xl px-6 py-12 mx-auto mt-10 text-gray-800">
@@ -94,7 +94,7 @@ export default function PrivacyPolicy() {
         <h2 className="mb-2 text-2xl font-semibold text-gray-700">Contact Us</h2>
         <p>
           If you have any questions or concerns about our Privacy Policy,
-          feel free to contact us at <strong>7733888999</strong>.
+          feel free to contact us at <strong>7665889564</strong>.
         </p>
       </section>
 
