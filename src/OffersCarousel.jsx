@@ -10,7 +10,7 @@ import "swiper/css/navigation";
 const carOffers = [
   {
     name: "Hyundai IONIQ 5",
-    price: "₹4,00,000*",
+    price: "₹4,05,000*",
     image: "/images/ioniq_thumbnail_pc.png",
   },
   {
@@ -30,7 +30,7 @@ const carOffers = [
   // },
   {
     name: "Hyundai I20",
-    price: "₹55,000*",
+    price: "₹70,000*",
     image: "/images/i20.png",
   },
   // {
@@ -41,12 +41,12 @@ const carOffers = [
  
   {
     name: "Hyundai AURA",
-    price: "₹55,000*",
+    price: "₹45,000*",
     image: "/images/Aura.webp",
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "₹65,000*",
+    price: "₹70,000*",
     image: "/images/Grand _10_Nios.png",
   },
   {
@@ -57,7 +57,7 @@ const carOffers = [
 
   {
     name: "Hyundai EXTER",
-    price: "₹55,000*",
+    price: "₹60,000*",
     image: "/images/EXTER.png",
   },
   {
@@ -68,7 +68,7 @@ const carOffers = [
 
     {
     name: "Hyundai Creta",
-    price: "₹5,000*",
+    price: "₹40,000*",
     image: "/images/creta-suvpc.png",
   },
  
