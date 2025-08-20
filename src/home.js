@@ -97,9 +97,9 @@ const InterestForm = () => {
           Booking for
           <a
             className='pl-4 text-lg font-semibold text-gray-900'
-            href='tel:+917665889564'
+            href='tel:+917733888999'
           >
-            📞 7665889564
+            📞 7733888999
           </a>
         </h1>
       </nav>
@@ -407,7 +407,7 @@ export const Footer = () => {
           </div>
           <p className='flex items-center gap-2'>
             <Phone className='w-5 h-5' />
-            <a href='tel:+917665889564'>7665889564</a>
+            <a href='tel:+917733888999'>7733888999</a>
           </p>
           <p className='flex items-center gap-2 mt-2'>
             <Mail className='w-5 h-5' />
