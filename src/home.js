@@ -33,7 +33,7 @@ const InterestForm = () => {
     mobile: '',
     email: '',
     model: '',
-    city: '', 
+    city: '',
   });
   const [errors, setErrors] = useState({});
   const [submitted, setSubmitted] = useState(false);
@@ -53,7 +53,7 @@ const InterestForm = () => {
     if (!form.name.trim()) newErrors.name = 'Name is required';
     if (!form.mobile.trim() || !/^\d{10}$/.test(form.mobile))
       newErrors.mobile = 'Valid 10-digit mobile number is required';
-    if (!form.city) newErrors.city = 'Please select a city'; 
+    if (!form.city) newErrors.city = 'Please select a city';
     if (!form.model) newErrors.model = 'Please select a car model';
     if (form.email && !/\S+@\S+\.\S+/.test(form.email))
       newErrors.email = 'Please enter a valid email address';
@@ -105,12 +105,12 @@ const InterestForm = () => {
       </nav>
 
       <img
-        src='/images/Website_Hyundai__August_freedom_Offers__at_Bharat_Hyundai.webp'
+        src='/images/Website_Hyundai__September_Offers__at_Bharat_Hyundai.webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
       <img
-        src='/images/WM_Hyundai__August_freedom_Offers__at_Bharat_Hyundai.webp'
+        src='/images/WM_Hyundai__September_Offers__at_Bharat_Hyundai.webp'
         alt='Mobile Banner'
         className='block object-cover w-full mt-10 sm:hidden'
       />
@@ -173,7 +173,7 @@ const InterestForm = () => {
                 disabled={loading}
                 className='w-full px-4 py-2 text-sm text-center text-black bg-transparent border-b-2 border-black sm:text-base focus:outline-none'
               >
-                <option  value=''>Select Model</option>
+                <option value=''>Select Model</option>
                 <option value='I20'>I20</option>
                 <option value='GRAND I10 NIOS'>GRAND I10 NIOS</option>
                 <option value='AURA'>AURA</option>
