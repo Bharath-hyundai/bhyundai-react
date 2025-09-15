@@ -49,7 +49,6 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [fromDate, setFromDate] = useState("");
   const [toDate, setToDate] = useState("");
-
   const [currentPage, setCurrentPage] = useState(1);
   const rowsPerPage = 10;
 
@@ -65,12 +64,25 @@ function Dashboard() {
           id: doc.id,
           ...doc.data(),
         }));
-        setData(list);
-        setFilteredData(list);
+
+        // ✅ Remove duplicates by mobile OR email
+        const unique = list.filter(
+          (lead, index, self) =>
+            index ===
+            self.findIndex(
+              (l) =>
+                (l.mobile && l.mobile === lead.mobile) ||
+                (l.email && l.email === lead.email)
+            )
+        );
+
+        setData(unique);
+        setFilteredData(unique);
         setLoading(false);
       } catch (error) {
-        console.log(error);
+        console.error(error);
         toast.error("Something went wrong!");
+        setLoading(false);
       }
     };
     fetchData();
@@ -135,7 +147,7 @@ function Dashboard() {
   }
 
   useEffect(() => {
-    const result = data.filter((item) => {
+    let result = data.filter((item) => {
       const ts = item.timestamp?.seconds;
       if (!ts) return false;
       const itemDate = new Date(ts * 1000);
@@ -155,6 +167,17 @@ function Dashboard() {
 
       return matchSearch && matchDate && matchCity;
     });
+
+    // ✅ Deduplicate again after filtering (safety check)
+    result = result.filter(
+      (lead, index, self) =>
+        index ===
+        self.findIndex(
+          (l) =>
+            (l.mobile && l.mobile === lead.mobile) ||
+            (l.email && l.email === lead.email)
+        )
+    );
 
     setFilteredData(result);
   }, [search, fromDate, toDate, selectedCity, data]);
