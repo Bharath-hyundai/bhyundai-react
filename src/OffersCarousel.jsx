@@ -10,27 +10,23 @@ import "swiper/css/navigation";
 const carOffers = [
   {
     name: "Hyundai IONIQ 5",
-    price: "₹4,05,000*",
+    price: "₹7,05,000*",
     image: "/images/ioniq_thumbnail_pc.png",
   },
   {
     name: "Hyundai Verna",
-    price: "₹65,000*",
+    price: "₹55,000*",
     image: "/images/verna.png",
   },
   {
     name: "Hyundai Venue",
-    price: "₹85,000*",
+    price: "₹50,000*",
     image: "/images/Venue.png",
   },
-  // {
-  //   name: "Hyundai Venue N Line",
-  //   price: "₹65,000*",
-  //   image: "/images/Venue_N_line.png",
-  // },
+  
   {
     name: "Hyundai I20",
-    price: "₹70,000*",
+    price: "₹50,000*",
     image: "/images/i20.png",
   },
   // {
@@ -41,34 +37,34 @@ const carOffers = [
  
   {
     name: "Hyundai AURA",
-    price: "₹45,000*",
+    price: "₹33,000*",
     image: "/images/Aura.webp",
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "₹70,000*",
+    price: "₹55,000*",
     image: "/images/Grand _10_Nios.png",
   },
   {
     name: "Hyundai Alcazar",
-    price: "₹70,000*",
+    price: "₹60,000*",
     image: "/images/HYUNDAI-ALCAZAR.png",
   },
 
   {
     name: "Hyundai EXTER",
-    price: "₹60,000*",
+    price: "₹50,000*",
     image: "/images/EXTER.png",
   },
   {
     name: "Hyundai TUCSON",
-    price: "₹1,00,000*",
+    price: "₹95,000*",
     image: "/images/Hyundai_Tucson.png",
   },
 
     {
     name: "Hyundai Creta",
-    price: "₹40,000*",
+    price: "₹5,000*",
     image: "/images/creta-suvpc.png",
   },
  

@@ -105,12 +105,12 @@ const InterestForm = () => {
       </nav>
 
       <img
-        src='/images/Website_Hyundai__September_Offers__at_Bharat_Hyundai.webp'
+        src='/images/Website_Hyundai__October_Offers__at_Bharat_Hyundai.webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
       <img
-        src='/images/WM_Hyundai__September_Offers__at_Bharat_Hyundai.webp'
+        src='/images/WM_Hyundai__October_Offers__at_Bharat_Hyundai.webp'
         alt='Mobile Banner'
         className='block object-cover w-full mt-10 sm:hidden'
       />
