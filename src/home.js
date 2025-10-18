@@ -160,6 +160,7 @@ const InterestForm = () => {
                   Select City
                 </option>
                 <option value='HYDERABAD'>Hyderabad</option>
+                <option value='Nampally'>Nampally</option>
                 <option value='KHAMMAM'>Khammam</option>
               </select>
               {errors.city && (
