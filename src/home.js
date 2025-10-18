@@ -159,8 +159,8 @@ const InterestForm = () => {
                 <option value='' disabled hidden>
                   Select City
                 </option>
-                <option value='HYDERABAD'>Hyderabad</option>
-                <option value='Nampally'>Nampally</option>
+                <option value='Gachibowli'>Gachibowli(HYD)</option>
+                <option value='Nampally'>Nampally(HYD)</option>
                 <option value='KHAMMAM'>Khammam</option>
               </select>
               {errors.city && (
