@@ -20,13 +20,13 @@ const carOffers = [
   },
   {
     name: "Hyundai Venue",
-    price: "₹50,000*",
+    price: "₹60,000*",
     image: "/images/Venue.png",
   },
   
   {
     name: "Hyundai I20",
-    price: "₹50,000*",
+    price: "₹80,000*",
     image: "/images/i20.png",
   },
   // {
@@ -42,23 +42,23 @@ const carOffers = [
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "₹55,000*",
+    price: "₹75,000*",
     image: "/images/Grand _10_Nios.png",
   },
   {
     name: "Hyundai Alcazar",
-    price: "₹60,000*",
+    price: "₹50,000*",
     image: "/images/HYUNDAI-ALCAZAR.png",
   },
 
   {
     name: "Hyundai EXTER",
-    price: "₹50,000*",
+    price: "₹75,000*",
     image: "/images/EXTER.png",
   },
   {
     name: "Hyundai TUCSON",
-    price: "₹95,000*",
+    price: "₹25,000*",
     image: "/images/Hyundai_Tucson.png",
   },
 
