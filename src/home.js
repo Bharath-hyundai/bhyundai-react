@@ -455,40 +455,40 @@ export const Footer = () => {
 
 const features = [
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta-DcM4ZZq5.jpg',
-    title: 'Driving range up to 473 km**',
+    image: '/images/creta-electric-front-1.avif',
+    title: 'Driving range up to 473 km (ARAI)',
     description:
-      'Say goodbye to frequent charging stops! With a driving range of up to 473 km on a single full charge**, the CRETA Electric is built for those who crave uninterrupted adventures.',
+      'Go farther with confidence. The CRETA Electric delivers an impressive driving range of up to 473 km on a single full charge, making long journeys smooth and worry-free.',
   },
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta2-CtNK2RxL.jpg',
-    title: 'Pixelated graphic grille',
+    image: '/images/cretaevsmall01.jpg',
+    title: 'Pixelated EV front grille with charging port',
     description:
-      'The Hyundai CRETA Electric sets a new benchmark in design with a pixelated graphic front-grille with integrated charging port and a pixelated graphic lower bumper.',
+      'A bold new EV identity with pixelated graphics on the front grille, seamlessly integrating the charging port for a futuristic and premium look.',
   },
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta7-DR7lee5y.jpg',
-    title: 'Active Air Flaps#',
+    image: '/images/cretaevsmall5.avif',
+    title: 'Active Air Flaps (AAF)',
     description:
-      'The Active Air Flap (AAF) adds a flare in style and performance, optimizing airflow for cooling and enhanced aerodynamics.',
+      'Active Air Flaps intelligently manage airflow to improve cooling efficiency and aerodynamics, enhancing overall driving range and performance.',
   },
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta3-DI0AVk7J.jpg',
-    title: 'Pixelated graphic rear bumper',
+    image: '/images/cretaevsmall4.avif',
+    title: 'Pixelated rear bumper & connected LED tail lamps',
     description:
-      'Complementing the front design, the pixelated graphic rear bumper, and the connected LED tail lamps offer an innovative and electrifying appearance.',
+      'The rear design mirrors the futuristic front with pixelated elements and connected LED tail lamps, giving the CRETA Electric a distinct EV signature.',
   },
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta8-CxR7ji2m.jpg',
-    title: 'R17 (D=436.6 mm) Aero Alloy wheels',
+    image: '/images/cretaevsmall4.avif',
+    title: 'R17 Aero Alloy Wheels with LRR tyres',
     description:
-      'Equipped with R17 Aero Alloy Wheels with Low Rolling Resistance (LRR) tyres, the CRETA Electric enhances aerodynamic performance, contributing to improved range efficiency.',
+      'Specially designed 17-inch Aero Alloy wheels with Low Rolling Resistance tyres reduce drag and improve efficiency without compromising style.',
   },
   {
-    image: 'https://cretaelectric.hyundai.co.in/assets/creta4-hp25Do38.jpg',
-    title: 'Fast home charging',
+    image: '/images/cretaevsmall2.avif',
+    title: 'Fast charging & smart home charging',
     description:
-      'The Hyundai CRETA Electric can be charged from 10% to 80% in just 58 minutes*** (DC charging), while the 11kW Wall Box Home fast AC charger can achieve the same charge range in an impressive 4 hours*.',
+      'Charge from 10% to 80% in just 58 minutes using DC fast charging. The 11 kW wall box charger at home can achieve the same in approximately 4 hours.',
   },
 ];
 
