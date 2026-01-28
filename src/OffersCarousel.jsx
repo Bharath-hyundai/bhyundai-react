@@ -15,18 +15,18 @@ const carOffers = [
   },
   {
     name: "Hyundai Verna",
-    price: "₹55,000*",
+    price: "₹70,000*",
     image: "/images/verna.png",
   },
-  {
-    name: "Hyundai Venue",
-    price: "₹60,000*",
-    image: "/images/Venue.png",
-  },
+  // {
+  //   name: "Hyundai Venue",
+  //   price: "₹60,000*",
+  //   image: "/images/Venue.png",
+  // },
   
   {
     name: "Hyundai I20",
-    price: "₹80,000*",
+    price: "₹95,000*",
     image: "/images/i20.png",
   },
   // {
@@ -37,23 +37,23 @@ const carOffers = [
  
   {
     name: "Hyundai AURA",
-    price: "₹33,000*",
+    price: "₹38,000*",
     image: "/images/Aura.webp",
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "₹75,000*",
+    price: "₹85,000*",
     image: "/images/Grand _10_Nios.png",
   },
   {
     name: "Hyundai Alcazar",
-    price: "₹50,000*",
+    price: "₹55,000*",
     image: "/images/HYUNDAI-ALCAZAR.png",
   },
 
   {
     name: "Hyundai EXTER",
-    price: "₹75,000*",
+    price: "₹90,000*",
     image: "/images/EXTER.png",
   },
   {
@@ -64,7 +64,7 @@ const carOffers = [
 
     {
     name: "Hyundai Creta",
-    price: "₹5,000*",
+    price: "₹30,000*",
     image: "/images/creta-suvpc.png",
   },
  
