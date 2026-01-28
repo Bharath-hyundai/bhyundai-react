@@ -12,15 +12,15 @@ import Navbar from "../Navbar";
 import ContactForm from "../forms/ContactForm";
 
 /*********************** Helper Components ************************/
-function Input({ placeholder, type = "text" }) {
-  return (
-    <input
-      type={type}
-      placeholder={placeholder}
-      className="w-full px-4 py-3 text-sm bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
-    />
-  );
-}
+// function Input({ placeholder, type = "text" }) {
+//   return (
+//     <input
+//       type={type}
+//       placeholder={placeholder}
+//       className="w-full px-4 py-3 text-sm bg-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-teal-500"
+//     />
+//   );
+// }
 
 /*********************** ContactForm ******************************/
 /**
