@@ -62,20 +62,48 @@ const InterestForm = () => {
 
     if (Object.keys(newErrors).length === 0) {
       setLoading(true);
+
       try {
+        /* ===============================
+         1️⃣ WEBHOOK CALL
+      =============================== */
+        // const zohoRes = await fetch(
+        //   'https://webhook.site/05022a1e-5d43-46d4-b172-16918fb3c3b2',
+        //   {
+        //     method: 'POST',
+        //     mode: 'no-cors',
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify({
+        //       Last_Name: form.name || 'Website Lead',
+        //       Phone: form.mobile,
+        //       Email: form.email,
+        //       City: form.city,
+        //       Description: `Interested Model: ${form.model}`,
+        //       Lead_Source: 'Broaddcast',
+        //     }),
+        //   },
+        // );
+
+        /* ===============================
+         2️⃣ FIREBASE BACKUP
+      =============================== */
         await addDoc(collection(db, 'leads'), {
           name: form.name,
           email: form.email,
           mobile: form.mobile,
           model: form.model,
           city: form.city,
+          source: 'Website',
           timestamp: Timestamp.now(),
         });
+
         toast.success('Successfully submitted');
         navigate('/thank-you');
       } catch (error) {
-        console.log(error);
-        toast.error('Something went wrong!');
+        console.error('Submission Error:', error);
+        toast.error('Submission failed. Please try again.');
       } finally {
         setLoading(false);
       }
