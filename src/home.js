@@ -35,18 +35,18 @@ const makeDetails = {
 };
 
 const modelMapping = {
-  "I20": 1001,
+  "I20": 3628,
   "GRAND I10 NIOS": 3628,
-  "AURA": 1003,
-  "VERNA": 1004,
-  "ALCAZAR": 1005,
-  "TUCSON": 1006,
-  "CRETA N LINE": 1007,
-  "EXTER": 1008,
-  "VENUE N LINE": 1009,
-  "CRETA": 1010,
-  "CRETA ELECTRIC": 1011,
-  "IONIQ 5": 1012,
+  "AURA": 3628,
+  "VERNA": 3628,
+  "ALCAZAR": 3628,
+  "TUCSON": 3628,
+  "CRETA N LINE": 3628,
+  "EXTER": 3628,
+  "VENUE N LINE": 3628,
+  "CRETA": 3628,
+  "CRETA ELECTRIC": 3628,
+  "IONIQ 5": 3628,
 };
 
 
