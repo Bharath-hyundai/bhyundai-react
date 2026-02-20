@@ -43,7 +43,7 @@ const modelMapping = {
   "TUCSON": 3628,
   "CRETA N LINE": 3628,
   "EXTER": 3628,
-  "VENUE N LINE": 3628,
+  "VENUE N LINE": 3630,
   "CRETA": 3628,
   "CRETA ELECTRIC": 3628,
   "IONIQ 5": 3628,
