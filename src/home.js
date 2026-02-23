@@ -34,20 +34,20 @@ const makeDetails = {
   id: 393, // Replace with real CRM makeId
 };
 
-const modelMapping = {
-  "I20": 3628,
-  "GRAND I10 NIOS": 3628,
-  "AURA": 3628,
-  "VERNA": 3628,
-  "ALCAZAR": 3628,
-  "TUCSON": 3628,
-  "CRETA N LINE": 3628,
-  "EXTER": 3628,
-  "VENUE N LINE": 3630,
-  "CRETA": 3628,
-  "CRETA ELECTRIC": 3628,
-  "IONIQ 5": 3628,
-};
+  const modelMapping = {
+    "I20": 3613,
+    "GRAND I10 NIOS": 3628,
+    "AURA": 3629,
+    "VERNA": 3858,
+    "ALCAZAR": 3606,
+    "TUCSON": 3860,
+    "CRETA N LINE": 3865,
+    "EXTER": 3863,
+    "VENUE N LINE": 4748,
+    "CRETA": 3605,
+    "CRETA ELECTRIC": 3867,
+    "IONIQ 5": 3862,
+  };
 
 
   
