@@ -113,7 +113,7 @@ const handleSubmit = async (e) => {
 
     try {
       const crmResponse = await fetch(
-        "https://backend-cypro.onrender.com/api/create-lead",
+        "https://backend-cypro.vercel.app/api/create-lead",
         {
           method: "POST",
           headers: {
