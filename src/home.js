@@ -195,7 +195,7 @@ const InterestForm = () => {
 
       try {
         const crmResponse = await fetch(
-          "https://backend-cypro.onrender.com/api/create-lead",
+          "https://backend-cypro.vercel.app/api/create-lead",
           {
             method: "POST",
             headers: {
@@ -216,7 +216,7 @@ const InterestForm = () => {
         );
 
         const crmData = await crmResponse.json();
-
+        
         if (crmData.success) {
           console.log("CRM Success");
         } else {
@@ -470,8 +470,8 @@ function CarShowcase() {
           <button
             key={car.name}
             className={`w-6 h-6 rounded-full border-2 transition-transform duration-200 focus:ring focus:ring-gray-300 ${selectedCar.name === car.name
-                ? 'border-black scale-110 ring-2 ring-black'
-                : 'border-gray-400'
+              ? 'border-black scale-110 ring-2 ring-black'
+              : 'border-gray-400'
               }`}
             style={{ backgroundColor: car.code }}
             onClick={() => setSelectedCar(car)}
