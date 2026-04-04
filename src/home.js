@@ -26,13 +26,13 @@ import { CgSpinner } from 'react-icons/cg';
 // import Navbar from './components/Navbar';
 
 // import Popup from "./popup";
-const title = "Hyundai Cars";
+
 const InterestForm = () => {
 
-  const makeDetails = {
-    name: "Hyundai",
-    id: 393, // Replace with real CRM makeId
-  };
+const makeDetails = {
+  name: "Hyundai",
+  id: 393, // Replace with real CRM makeId
+};
 
   const modelMapping = {
     "I20": 3613,
@@ -49,25 +49,8 @@ const InterestForm = () => {
     "IONIQ 5": 3862,
   };
 
-<<<<<<< HEAD
-  const modelMapping = {
-    "I20": 3613,
-    "GRAND I10 NIOS": 3628,
-    "AURA": 3629,
-    "VERNA": 3858,
-    "ALCAZAR": 3606,
-    "TUCSON": 3860,
-    "CRETA N LINE": 3865,
-    "EXTER": 3863,
-    "VENUE N LINE": 4748,
-    "CRETA": 3605,
-    "CRETA ELECTRIC": 3867,
-    "IONIQ 5": 3862,
-  };
-=======
->>>>>>> 6cb0058 (updated model mapping)
 
-
+  
   const [form, setForm] = useState({
     name: '',
     mobile: '',
@@ -84,22 +67,21 @@ const InterestForm = () => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setErrors({});
-    setSubmitted(false);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setErrors({});
+  setSubmitted(false);
 
-    let newErrors = {};
+  let newErrors = {};
 
-    if (!form.name.trim()) newErrors.name = "Name is required";
-    if (!/^\d{10}$/.test(form.mobile))
-      newErrors.mobile = "Valid 10-digit mobile number is required";
-    if (!form.city) newErrors.city = "Please select a city";
-    if (!form.model) newErrors.model = "Please select a car model";
-    if (form.email && !/\S+@\S+\.\S+/.test(form.email))
-      newErrors.email = "Please enter a valid email address";
+  if (!form.name.trim()) newErrors.name = "Name is required";
+  if (!/^\d{10}$/.test(form.mobile))
+    newErrors.mobile = "Valid 10-digit mobile number is required";
+  if (!form.city) newErrors.city = "Please select a city";
+  if (!form.model) newErrors.model = "Please select a car model";
+  if (form.email && !/\S+@\S+\.\S+/.test(form.email))
+    newErrors.email = "Please enter a valid email address";
 
-<<<<<<< HEAD
   if (Object.keys(newErrors).length > 0) {
     setErrors(newErrors);
     return;
@@ -162,86 +144,22 @@ const InterestForm = () => {
     } catch (crmError) {
       console.error("CRM Error:", crmError);
       // CRM failure should NOT break user flow
-=======
-    if (Object.keys(newErrors).length > 0) {
-      setErrors(newErrors);
-      return;
->>>>>>> 6cb0058 (updated model mapping)
     }
 
-    setLoading(true);
+    /* ===============================
+       3️⃣ SUCCESS FLOW
+    =============================== */
 
-    try {
-      /* ===============================
-         1️⃣ SAVE TO FIREBASE FIRST
-      =============================== */
+    toast.success("Successfully submitted");
+    navigate("/thank-you");
 
-      await addDoc(collection(db, "leads"), {
-        name: form.name,
-        email: form.email || "",
-        mobile: form.mobile,
-        model: form.model,
-        city: form.city,
-        source: "Website",
-        crmStatus: "Pending",
-        timestamp: Timestamp.now(),
-      });
-
-      // console.log("Firebase Lead ID:", firebaseDoc.id);
-
-      /* ===============================
-         2️⃣ CALL CRM AFTER FIREBASE
-      =============================== */
-
-      try {
-        const crmResponse = await fetch(
-          "https://backend-cypro.vercel.app/api/create-lead",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              firstName: form.name,
-              mobileNumber: form.mobile,
-              emailId: form.email || "",
-              makeName: makeDetails.name,
-              makeId: makeDetails.id,
-              modelName: form.model,
-              modelId: modelMapping[form.model],
-              city: form.city,
-              pincode: 500032,
-            }),
-          }
-        );
-
-        const crmData = await crmResponse.json();
-        
-        if (crmData.success) {
-          console.log("CRM Success");
-        } else {
-          console.log("CRM Failed but Firebase saved");
-        }
-
-      } catch (crmError) {
-        console.error("CRM Error:", crmError);
-        // CRM failure should NOT break user flow
-      }
-
-      /* ===============================
-         3️⃣ SUCCESS FLOW
-      =============================== */
-
-      toast.success("Successfully submitted");
-      navigate("/thank-you");
-
-    } catch (firebaseError) {
-      console.error("Firebase Error:", firebaseError);
-      toast.error("Submission failed. Please try again.");
-    } finally {
-      setLoading(false);
-    }
-  };
+  } catch (firebaseError) {
+    console.error("Firebase Error:", firebaseError);
+    toast.error("Submission failed. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
 
   return (
@@ -469,10 +387,11 @@ function CarShowcase() {
         {colors.map((car) => (
           <button
             key={car.name}
-            className={`w-6 h-6 rounded-full border-2 transition-transform duration-200 focus:ring focus:ring-gray-300 ${selectedCar.name === car.name
-              ? 'border-black scale-110 ring-2 ring-black'
-              : 'border-gray-400'
-              }`}
+            className={`w-6 h-6 rounded-full border-2 transition-transform duration-200 focus:ring focus:ring-gray-300 ${
+              selectedCar.name === car.name
+                ? 'border-black scale-110 ring-2 ring-black'
+                : 'border-gray-400'
+            }`}
             style={{ backgroundColor: car.code }}
             onClick={() => setSelectedCar(car)}
             aria-label={`Select ${car.name} color`}
