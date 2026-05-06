@@ -56,11 +56,11 @@ const carOffers = [
     price: "₹35,000*",
     image: "/images/EXTER.png",
   },
-  {
-    name: "Hyundai TUCSON",
-    price: "₹25,000*",
-    image: "/images/Hyundai_Tucson.png",
-  },
+  // {
+  //   name: "Hyundai TUCSON",
+  //   price: "₹25,000*",
+  //   image: "/images/Hyundai_Tucson.png",
+  // },
 
     {
     name: "Hyundai Creta",
