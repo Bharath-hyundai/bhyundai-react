@@ -185,12 +185,12 @@ const handleSubmit = async (e) => {
       </nav>
 
       <img
-        src='/images/Website_Hyundai_April_Summer_offers_Bharat_Hyundai_Offers.webp'
+        src='/images/bharat_hyundai_banner.webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
       <img
-        src='/images/WM_Hyundai_April_Summer_offers_Bharat_Hyundai_Offers.webp'
+        src='/images/wm-mobile-banner.jpeg'
         alt='Mobile Banner'
         className='block object-cover w-full mt-10 sm:hidden'
       />

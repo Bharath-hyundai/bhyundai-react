@@ -11,7 +11,7 @@ const carOffers = [
   {
     name: "Hyundai Creta Electric",
     price: "₹75,000*",
-    image: "https://imgd.aeplcdn.com/600x337/n/g8ajt9b_1804861.jpg?q=80",
+    image: "/images/creta-suvpc.png",
   },
   {
     name: "Hyundai Verna",
@@ -67,11 +67,7 @@ const carOffers = [
     price: "₹1,00,000*",
     image: "/images/creta-suvpc.png",
   },
-   {
-    name: "Hyundai Creta Electric",
-    price: "₹70,000*",
-    image: "/images/creta-suvpc.png",
-  },
+ 
 ];
 
 function OffersCarousel() {
