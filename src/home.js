@@ -242,6 +242,14 @@ const InterestForm = () => {
                 <option value='Gachibowli'>Gachibowli(HYD)</option>
                 <option value='Nampally'>Nampally(HYD)</option>
                 <option value='KHAMMAM'>Khammam</option>
+                <option value='Gopanpally'>Gopanpally</option>
+                <option value='Vikarabad'>Vikarabad</option>
+                <option value='Kothagudem'>Kothagudem</option>
+                <option value='Bhadrachalam'>Bhadrachalam</option>
+                <option value='Palovncha'>Palovncha</option>
+                <option value='Sathupalli'>Sathupalli</option>
+                <option value='Manuguru'>Manuguru</option>
+                <option value='Madhira'>Madhira</option>
               </select>
               {errors.city && (
                 <p className='text-xs text-red-500'>{errors.city}</p>
@@ -388,8 +396,8 @@ function CarShowcase() {
           <button
             key={car.name}
             className={`w-6 h-6 rounded-full border-2 transition-transform duration-200 focus:ring focus:ring-gray-300 ${selectedCar.name === car.name
-                ? 'border-black scale-110 ring-2 ring-black'
-                : 'border-gray-400'
+              ? 'border-black scale-110 ring-2 ring-black'
+              : 'border-gray-400'
               }`}
             style={{ backgroundColor: car.code }}
             onClick={() => setSelectedCar(car)}
