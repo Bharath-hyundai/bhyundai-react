@@ -15,7 +15,7 @@ const carOffers = [
   },
   {
     name: "Hyundai Verna",
-    price: "₹65,000*",
+    price: "₹50,000*",
     image: "/images/home-model-verna.avif",
   },
     {
@@ -31,7 +31,7 @@ const carOffers = [
   
   {
     name: "Hyundai I20",
-    price: "₹43,000*",
+    price: "₹50,000*",
     image: "/images/homemodel-i20.avif",
   },
   // {
@@ -47,7 +47,7 @@ const carOffers = [
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "68,000*",
+    price: "55,000*",
     image: "/images/homemodel-nios.avif",
   },
   {
@@ -58,7 +58,7 @@ const carOffers = [
 
   {
     name: "Hyundai EXTER",
-    price: "₹35,000*",
+    price: "₹40,000*",
     image: "/images/homemodel-exter.avif",
   },
     {
@@ -74,7 +74,7 @@ const carOffers = [
 
     {
     name: "Hyundai Creta",
-    price: "₹95,000*",
+    price: "₹85,000*",
     image: "/images/homemodel-creta.avif",
   },
  
