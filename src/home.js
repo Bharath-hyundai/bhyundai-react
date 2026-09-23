@@ -185,17 +185,17 @@ const InterestForm = () => {
       </nav>
 
       <img
-        src='/new-banners/Website_Hyundai_August_Independence_offers_Bharat_Hyundai_Offers.webp'
+        src='/images/banners/Website_Hyundai_Bayon_Bharat_Hyundai_Offers.webp'
         alt='Banner'
         className='hidden object-cover w-full mt-12 sm:block'
       />
       <img
-        src='/new-banners/WM_Hyundai_August_Independence_offers_Bharat_Hyundai_Offers.webp'
+        src='/images/banners/WM_Hyundai_Bayon_Bharat_Hyundai_Offers.webp'
         alt='Mobile Banner'
         className='block object-cover w-full mt-10 sm:hidden'
       />
 
-      <div className='w-full bg-white flex justify-center 2xl:top-96 border xl:top-80 lg:absolute lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-sm lg:max-h-sm'>
+      <div id='register' className='w-full bg-white flex justify-center 2xl:top-96 border xl:top-80 lg:absolute lg:left-72 lg:transform lg:-translate-x-1/2 lg:-translate-y-1/2 lg:bg-white lg:p-6 lg:top-96 lg:rounded-2xl lg:shadow-lg lg:w-[90%] lg:max-w-sm lg:max-h-sm'>
         <div className='w-full max-w-sm p-3 bg-white shadow-lg sm:p-8 md:p-2 rounded-2xl lg:max-w-sm lg:max-h-sm '>
           <h3 className='pb-4 text-xl font-bold text-center text-black sm:text-2xl'>
             REGISTER YOUR INTEREST
@@ -262,8 +262,9 @@ const InterestForm = () => {
                 disabled={loading}
                 className='w-full px-4 py-2 text-sm text-center text-black bg-transparent border-b-2 border-black sm:text-base focus:outline-none'
               >
-                <option value=''>Select Model</option>
-                <option value='I20'>I20</option>
+                <option value=''>Select Model</option>                  
+              <option value='BAYON'>BAYON</option>   <option value='I20'>I20</option>
+               
                 <option value='GRAND I10 NIOS'>GRAND I10 NIOS</option>
                 <option value='AURA'>AURA</option>
                 <option value='VERNA'>VERNA</option>
@@ -304,7 +305,7 @@ const InterestForm = () => {
       </div>
 
       <OffersCarousel />
-      <CarShowcase />
+      <BayonShowcase />
       <FeaturesSection />
       <Footer />
     </>
@@ -313,97 +314,60 @@ const InterestForm = () => {
 
 export default InterestForm;
 
-const colors = [
-  {
-    name: 'White',
-    code: '#FFFFFF',
-    img: 'https://imgd.aeplcdn.com/600x337/n/g8ajt9b_1804861.jpg?q=80',
-  },
-  {
-    name: 'Black',
-    code: '#000000',
-    img: 'https://imgd.aeplcdn.com/600x337/n/xacjt9b_1804863.jpg?q=80',
-  },
-  {
-    name: 'Gray',
-    code: '#808080',
-    img: 'https://imgd.aeplcdn.com/600x337/n/xfq8t9b_1804851.jpg?q=80',
-  },
-  {
-    name: 'Blue',
-    code: '#0033CC',
-    img: 'https://imgd.aeplcdn.com/600x337/n/08u8t9b_1804857.jpg?q=80',
-  },
-  {
-    name: 'Red',
-    code: '#CC0000',
-    img: 'https://imgd.aeplcdn.com/600x337/n/28v8t9b_1804859.jpg?q=80',
-  },
-];
-
-function CarShowcase() {
-  const [selectedCar, setSelectedCar] = useState(colors[0]);
-
+function BayonShowcase() {
   return (
-    <section className='bg-white px-6 sm:px-10 py-12 relative max-w-[1400px] mx-auto'>
-      <div className='flex flex-col items-center justify-between lg:flex-row'>
+    <section className='relative bg-black'>
+      <div className='flex flex-col items-center justify-between max-w-[1400px] mx-auto px-6 py-12 sm:px-10 lg:flex-row'>
         {/* Text Section */}
         <div className='px-4 text-center lg:w-1/2 lg:text-left'>
-          <h2 className='text-2xl font-bold text-gray-900 sm:text-3xl md:text-4xl'>
-            Hyundai CRETA Electric
-          </h2>
-          <p className='mt-2 text-lg font-medium text-gray-700'>
-            Undisputed. Ultimate. Now electric.
+          <p className='text-lg font-medium tracking-wide text-gray-300'>
+            Hyundai
           </p>
-          <p className='max-w-lg mx-auto mt-4 text-gray-500 lg:mx-0'>
-            The iconic SUV, in its electric avatar, is here to take your driving
-            experience to the next level. Building on the undisputed ultimate
-            machine, the car seamlessly merges design, performance, technology,
-            and style.
+          <h2 className='text-3xl font-bold tracking-wide text-white sm:text-4xl md:text-5xl'>
+            BAYON.
+          </h2>
+          <p className='mt-2 text-lg font-medium text-gray-200'>
+            Intelligence that moves.
+          </p>
+          <p className='max-w-lg mx-auto mt-4 text-gray-400 lg:mx-0'>
+            The all-new Hyundai BAYON — an Intelligent Utility Vehicle built to
+            move with you. Bold design, connected technology and a commanding
+            road presence come together in Hyundai's newest SUV. Bookings are
+            now open at Bharat Hyundai.
+          </p>
+
+          <p className='mt-6 text-sm leading-7 tracking-wide text-gray-400'>
+            <span className='font-semibold text-white'>I</span>ntelligent{' '}
+            <span className='font-semibold text-white'>U</span>tility{' '}
+            <span className='font-semibold text-white'>V</span>ehicle
           </p>
 
           {/* Buttons */}
           <div className='flex flex-col items-center gap-4 mt-6 sm:flex-row lg:items-start'>
-            <button className='px-6 py-2 text-blue-500 transition border border-blue-500 rounded-lg hover:bg-blue-500 hover:text-white'>
-              Brochure
-            </button>
-            <a href='/' className='flex items-center text-lg text-blue-500'>
+            <a
+              href='#register'
+              className='px-6 py-2 text-white transition border border-white rounded-lg hover:bg-white hover:text-black'
+            >
+              Book Now
+            </a>
+            <a href='#register' className='flex items-center text-lg text-white'>
               Register your Interest <span className='ml-2'>→</span>
             </a>
           </div>
+
+          <p className='mt-6 text-xs text-gray-500'>
+            *Type approval certificate is applied for. T&C Apply.
+          </p>
         </div>
 
         {/* Car Image Section */}
-        <div className='relative flex justify-center mt-10 lg:w-1/2 lg:mt-0'>
-          {/* Background Color Block */}
-          <div
-            className='absolute top-1/2 -translate-y-1/2 w-[260px] h-[260px] sm:w-[380px] sm:h-[380px] lg:w-[480px] lg:h-[420px] rounded-lg -z-10'
-            style={{ backgroundColor: selectedCar.code }}
-          ></div>
-
-          {/* Car Image */}
+        <div className='relative flex justify-center w-full mt-10 lg:w-1/2 lg:mt-0'>
           <img
-            src={selectedCar.img}
-            alt={`CRETA Electric - ${selectedCar.name}`}
-            className='w-[85%] sm:w-[65%] lg:w-[90%] max-w-xs sm:max-w-md lg:max-w-lg relative z-10'
+            src='/images/bayon-teaser.webp'
+            alt='Hyundai BAYON'
+            className='w-full max-w-md sm:max-w-lg lg:max-w-2xl'
           />
         </div>
-      </div>
-
-      {/* Color Selection Dots */}
-      <div className='flex justify-center mt-6 space-x-3 lg:justify-end lg:pl-4'>
-        {colors.map((car) => (
-          <button
-            key={car.name}
-            className={`w-6 h-6 rounded-full border-2 transition-transform duration-200 focus:ring focus:ring-gray-300 ${selectedCar.name === car.name
-              ? 'border-black scale-110 ring-2 ring-black'
-              : 'border-gray-400'
-              }`}
-            style={{ backgroundColor: car.code }}
-            onClick={() => setSelectedCar(car)}
-            aria-label={`Select ${car.name} color`}
-          ></button>
-        ))}
       </div>
     </section>
   );
