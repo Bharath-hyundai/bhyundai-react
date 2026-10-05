@@ -10,12 +10,12 @@ import "swiper/css/navigation";
 const carOffers = [
   {
     name: "Hyundai Creta Electric",
-    price: "₹70,000*",
+    price: "₹65,000*",
     image: "/images/homemodel-creta-electric.avif",
   },
   {
     name: "Hyundai Verna",
-    price: "₹50,000*",
+    price: "₹75,000*",
     image: "/images/home-model-verna.avif",
   },
     {
@@ -31,7 +31,7 @@ const carOffers = [
   
   {
     name: "Hyundai I20",
-    price: "₹50,000*",
+    price: "₹65,000*",
     image: "/images/homemodel-i20.avif",
   },
   // {
@@ -42,23 +42,23 @@ const carOffers = [
  
   {
     name: "Hyundai AURA",
-    price: "₹25,000*",
+    price: "₹40,000*",
     image: "/images/homemodel-aura.avif",
   },
   {
     name: "Hyundai Grand i10 NIOS",
-    price: "55,000*",
+    price: "75,000*",
     image: "/images/homemodel-nios.avif",
   },
   {
     name: "Hyundai Alcazar",
-    price: "₹75,000*",
+    price: "₹90,000*",
     image: "/images/homemodel-alcazar.avif",
   },
 
   {
     name: "Hyundai EXTER",
-    price: "₹40,000*",
+    price: "₹50,000*",
     image: "/images/homemodel-exter.avif",
   },
     {
@@ -74,7 +74,7 @@ const carOffers = [
 
     {
     name: "Hyundai Creta",
-    price: "₹85,000*",
+    price: "₹1,15,000*",
     image: "/images/homemodel-creta.avif",
   },
  
