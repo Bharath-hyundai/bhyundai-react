@@ -35,6 +35,7 @@ const InterestForm = () => {
   };
 
   const modelMapping = {
+    "BAYON": 5415,
     "I20": 3613,
     "GRAND I10 NIOS": 3628,
     "AURA": 3629,
@@ -262,9 +263,9 @@ const InterestForm = () => {
                 disabled={loading}
                 className='w-full px-4 py-2 text-sm text-center text-black bg-transparent border-b-2 border-black sm:text-base focus:outline-none'
               >
-                <option value=''>Select Model</option>                  
-              <option value='BAYON'>BAYON</option>   <option value='I20'>I20</option>
-               
+                <option value=''>Select Model</option>
+                <option value='BAYON'>BAYON</option>
+                <option value='I20'>I20</option>
                 <option value='GRAND I10 NIOS'>GRAND I10 NIOS</option>
                 <option value='AURA'>AURA</option>
                 <option value='VERNA'>VERNA</option>
